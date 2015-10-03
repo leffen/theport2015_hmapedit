@@ -16,5 +16,6 @@ vendor/bundle/**
 .tmp
 node_modules
 .yardoc
+.DS_Store
 
 
