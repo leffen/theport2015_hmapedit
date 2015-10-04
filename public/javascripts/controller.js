@@ -96,7 +96,7 @@ var Controller = StateMachine.create({
 });
 
 $.extend(Controller, {
-  gridSize: [200, 200], // number of nodes horizontally and vertically
+  gridSize: [120, 60], // number of nodes horizontally and vertically
   operationsPerSecond: 300,
 
   /**
@@ -160,7 +160,7 @@ $.extend(Controller, {
       Controller.clearOperations();
       Controller.clearFootprints();
       Controller.start();
-    }, View.nodeColorizeEffect.duration * 1.2);
+    }, View.nodeColorizeEffect.duration * 0.2);
     // => restarting
   },
   onpause: function (event, from, to) {

@@ -39,10 +39,10 @@ var View = {
         },
     },
     nodeColorizeEffect: {
-        duration: 50,
+        duration: 10,
     },
     nodeZoomEffect: {
-        duration: 200,
+        duration: 2,
         transform: 's1.2', // scale by 1.2x
         transformBack: 's1.0',
     },
