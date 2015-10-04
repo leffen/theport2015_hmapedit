@@ -87,6 +87,11 @@ var Controller = StateMachine.create({
             from: ['draggingStart', 'draggingEnd', 'drawingWall', 'erasingWall'],
             to  : 'ready'
         },
+        {
+            name: 'drawgrid',
+            from: '*',
+            to:   'ready'
+        },
     ],
 });
 
@@ -195,7 +200,10 @@ $.extend(Controller, {
         }, View.nodeColorizeEffect.duration * 1.2);
         // => ready
     },
-
+    ondrawgrid: function(event, from, to) {
+        console.log("Draw grid");
+        // => ready
+    },
     /**
      * The following functions are called on entering states.
      */
@@ -216,7 +224,13 @@ $.extend(Controller, {
             text: 'Clear Walls',
             enabled: true,
             callback: $.proxy(this.reset, this),
-        });
+        },
+          {
+              id: 4,
+              text: 'Draw grid',
+              enabled: true,
+              callback: $.proxy(this.drawgrid, this),
+          });
         // => [starting, draggingStart, draggingEnd, drawingStart, drawingEnd]
     },
     onstarting: function(event, from, to) {
